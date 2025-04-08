@@ -16,6 +16,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 /* tags */
@@ -23,11 +24,13 @@
 body {
     display: grid;
     grid-template-columns: 1fr 4fr;
+    gap: 1%;
     height: 100vh;
     width: 100vw;
     font-family: 'Roboto', 'Arial', sans-serif;
     background-color: var(--white);
-    overflow: hidden;
+    /* overflow: hidden; */
+    padding: 3vh;
 }
 
 a {
@@ -43,15 +46,47 @@ input {
     font-size: small;
     padding: 0.3rem;
     padding-left: 0.5rem;
+    width: 100%;
 }
 
 aside, main {
-    height: 100vh;
-    padding: 5%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+aside {
+    max-width: 100%;
 }
 
 main {
     background-color: var(--backgroundGray);
+    max-width: 100%;
+    padding: 2%;
+    display: flex-row;
+}
+
+table {
+    background-color: var(--white);
+    outline: 1px solid var(--dividerGray);
+    border-radius: 18px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px var(--tableDivider);
+    border-style: solid none solid none;
+    padding: 10px;
+}
+
+th {
+    background-color: var(--tableArea);
+    color: var(--tableTitle);
+    text-align: left;
+}
+
+td {
+    color: var(--titleBlue);
 }
 
 /* classes */
@@ -61,22 +96,17 @@ main {
     justify-content: space-between;
 }
 
-main.flex-container {
+main.flex-container , aside.flex-container {
     flex-direction: column;
 }
 
-aside.flex-container {
-    flex-direction: column;
-}
-
-.aside-title {
+.title {
     color: var(--titleBlue);
     font-weight: bold;
 }
 
 .aside-section {
     display: flex-row;
-    justify-content: space-between;
 }
 
 .aside-area{
@@ -93,20 +123,13 @@ aside.flex-container {
     font-size: small;
 }
 
-.aside-card .title {
-    font-weight: bold;
-    color: var(--titleBlue);
-}
-
 .aside-card .description {
     color: var(--textGray);
     font-size: smaller;
 }
 
 main .title {
-    color: var(--titleBlue);
     font-size: x-large;
-    font-weight: bold;
 }
 
 .secondary-text {
@@ -115,11 +138,36 @@ main .title {
     font-size: medium;
 }
 
-.card-tab {
+.div-card-tab {
+    display: flex;
+}
 
+.card-tab {
+    background-color: var(--white);
+    color: var(--tableTitle);
+    font-size: small;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    padding: 10px 15px;
+    width: min-content;
+
+}
+
+/* voltar para ver se coloca tudo em div ou tira aquela */
+.tag-alerta{
+    background-color: var(--tagBackground);
+    color: var(--tagText);
+    font-size: small;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+    padding: 1ch 0.5ch;
 }
 
 /*
 
-.tag-alerta{}
+
 */
