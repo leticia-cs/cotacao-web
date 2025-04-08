@@ -1,0 +1,125 @@
+/* initial config */
+:root {
+    --titleBlue:#414B6C;
+    --textGray:#6B7280;
+    --linkBlue:#29BDDE;
+    --backgroundGray:#F5F5F5;
+    --white:#fff;
+    --dividerGray:#C2CDE4;
+    --tableTitle:#1C4ED8;
+    --tableArea:#D9E7F2;
+    --tableDivider:#DBE9FE;
+    --tagBackground:#FEF3C7;
+    --tagText:#B4540A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* tags */
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+a {
+    color: var(--linkBlue);
+    text-decoration: underline;
+    font-size: small;
+}
+
+input {
+    border: 1px solid var(--dividerGray);
+    border-radius: 5px;
+    color: var(--titleBlue);
+    font-size: small;
+    padding: 0.3rem;
+    padding-left: 0.5rem;
+}
+
+aside, main {
+    height: 100vh;
+    padding: 5%;
+}
+
+main {
+    background-color: var(--backgroundGray);
+}
+
+/* classes */
+
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+main.flex-container {
+    flex-direction: column;
+}
+
+aside.flex-container {
+    flex-direction: column;
+}
+
+.aside-title {
+    color: var(--titleBlue);
+    font-weight: bold;
+}
+
+.aside-section {
+    display: flex-row;
+    justify-content: space-between;
+}
+
+.aside-area{
+    background-color: var(--backgroundGray);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.aside-card {
+    background-color:var(--white);
+    border: 1px solid var(--dividerGray);
+    border-radius: 5px;
+    padding: 5%;
+    font-size: small;
+}
+
+.aside-card .title {
+    font-weight: bold;
+    color: var(--titleBlue);
+}
+
+.aside-card .description {
+    color: var(--textGray);
+    font-size: smaller;
+}
+
+main .title {
+    color: var(--titleBlue);
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.secondary-text {
+    color: var(--textGray);
+    font-weight: 200;
+    font-size: medium;
+}
+
+.card-tab {
+
+}
+
+/*
+
+.tag-alerta{}
+*/
