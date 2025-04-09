@@ -124,13 +124,16 @@ main.flex-container, aside.flex-container {
 }
 
 .aside-section {
-    display: flex-row;
+    display: flex;
+    flex-direction: column;
 }
 
 .aside-area{
     background-color: var(--backgroundGray);
     padding: 1rem;
     border-radius: 5px;
+    display: flex-row;
+    justify-content: space-between;
 }
 
 .aside-card {
@@ -162,6 +165,8 @@ main .title {
 
 .div-card-tab {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .card-tab {
@@ -175,6 +180,7 @@ main .title {
     border-radius: 8px;
     padding: 10px 15px;
     width: min-content;
+    height: 100%;
 }
 
 .tag-alerta{
