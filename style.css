@@ -55,14 +55,17 @@ aside, main {
 }
 
 aside {
-    width: 25%;
+    width: 20%;
 }
 
 main {
+    display: flex;
+    flex-direction: column;
     background-color: var(--backgroundGray);
-    max-width: 100%;
+    width: 80%;
     padding: 2%;
     display: flex-row;
+    gap: 3%;
 }
 
 hr {
@@ -111,7 +114,7 @@ td {
     justify-content: space-between;
 }
 
-main.flex-container , aside.flex-container {
+main.flex-container, aside.flex-container {
     flex-direction: column;
 }
 
@@ -145,6 +148,10 @@ main.flex-container , aside.flex-container {
 
 main .title {
     font-size: x-large;
+    background-color: var(--backgroundGray);
+    padding: 5px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--dividerGray);
 }
 
 .secondary-text {
@@ -186,14 +193,42 @@ main .title {
     }
 }
 
-@media screen and (max-width: 765px){
+@media screen and (max-width: 555px){
+    
     body {
         background-color: blue;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         gap: 1%;
         height: 100vh;
         width: 100vw;
+    }
+
+    aside {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+    }
+
+    main {
+        width: 100vw;
+        height: 80%;
+        overflow: scroll;
+    }
+
+    main .title {
+        position: fixed;
+        background-color: var(--backgroundGray);
+        width: 100%;
+        padding: 5px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--dividerGray);
+    }
+
+    th {
+        position: fixed;
+        width: 100%;
     }
 
 }
