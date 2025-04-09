@@ -22,8 +22,8 @@
 /* tags */
 
 body {
-    display: grid;
-    grid-template-columns: 1fr 4fr;
+    display: flex;
+    flex-direction: row;
     gap: 1%;
     height: 100vh;
     width: 100vw;
@@ -55,7 +55,7 @@ aside, main {
 }
 
 aside {
-    max-width: 100%;
+    width: 25%;
 }
 
 main {
@@ -189,8 +189,8 @@ main .title {
 @media screen and (max-width: 765px){
     body {
         background-color: blue;
-        display: grid;
-        grid-template-rows: 1fr 4fr;
+        display: flex;
+        flex-direction: row;
         gap: 1%;
         height: 100vh;
         width: 100vw;
