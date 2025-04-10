@@ -1,3 +1,21 @@
+/*
+TO-DO geral:
+- espacamento entre cards favoritos
+- xingar a tabela. e depois resolver.
+    - tamanhos nao-fixos
+    - alguma outra propriedade misteriosa de tabelas
+- descobrir como colocar icone no final do input
+- colocar icones
+    - estrela (favorito), pedido (geral), mensagem (menu de aba)
+- revisar comparando com a imagem original
+
+TO-DO mobile:
+- espaco entre cards no aside
+- deixar card aba selecionado azul
+- xingar a tabela. e depois resolver.
+*/
+
+
 /* initial config */
 :root {
     --titleBlue:#414B6C;
@@ -19,60 +37,31 @@
     box-sizing: border-box;
 }
 
-/* tags */
-
 body {
-    display: flex;
-    flex-direction: row;
-    gap: 1%;
     height: 100vh;
     width: 100vw;
+    display: flex;
+    gap: 1%;
+    padding: 1%;
     font-family: 'Roboto', 'Arial', sans-serif;
     background-color: var(--white);
-    overflow: hidden;
-    padding: 3vh;
-}
-
-a {
-    color: var(--linkBlue);
-    text-decoration: underline;
-    font-size: small;
-}
-
-input {
-    border: 1px solid var(--dividerGray);
-    border-radius: 5px;
-    color: var(--titleBlue);
-    font-size: small;
-    padding: 0.3rem;
-    padding-left: 0.5rem;
-    width: 100%;
-}
-
-aside, main {
-    height: 100%;
-    border-radius: 8px;
 }
 
 aside {
+    background-color: var(--white);
+    height: 100%;
     width: 20%;
+    overflow: scroll;
+    padding: 1ch;
 }
 
 main {
-    display: flex;
-    flex-direction: column;
     background-color: var(--backgroundGray);
+    height: 100%;
     width: 80%;
-    padding: 2%;
-    display: flex-row;
-    gap: 3%;
-}
-
-hr {
-    height: 0px;
-    color: var(--tableArea);
-    margin-left: -2%;
-    margin-right: -2%;
+    padding: 2ch;
+    border-radius: 5px;
+    gap: 2%;
 }
 
 table {
@@ -80,7 +69,7 @@ table {
     outline: 1px solid var(--dividerGray);
     border-radius: 18px;
     border-collapse: collapse;
-    width: 100%;
+    overflow: scroll;
 }
 
 th, td {
@@ -101,21 +90,33 @@ td {
 
 /* classes */
 
-.grid-container {
-    display: grid;
-}
-
-.grid-item {
-    height: min-content;
-}
-
-.flex-container{
+.flex-container-v {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
-main.flex-container, aside.flex-container {
-    flex-direction: column;
+.flex-container-h {
+    display: flex;
+    flex-direction: row;
+}
+
+.link {
+    color: var(--linkBlue);
+    text-decoration: underline;
+    font-size: small;
+}
+
+.search {
+    border: 1px solid var(--tableTitle);
+    border-radius: 5px;
+    color: var(--titleBlue);
+    font-size: small;
+    padding: 1ch;
+    min-width: fit-content;
+}
+
+aside .search {
+    width: 100%;
 }
 
 .title {
@@ -123,64 +124,60 @@ main.flex-container, aside.flex-container {
     font-weight: bold;
 }
 
-.aside-section {
-    display: flex;
-    flex-direction: column;
+main .title {
+    font-size: larger;
 }
 
-.aside-area{
+aside .card-cinza {
     background-color: var(--backgroundGray);
-    padding: 1rem;
-    border-radius: 5px;
-    display: flex-row;
-    justify-content: space-between;
+    padding: 1ch;
+    border-radius: 3px;
+    margin-bottom: 1ch;
 }
 
-.aside-card {
+.card-azul {
     background-color:var(--white);
     border: 1px solid var(--dividerGray);
-    border-radius: 5px;
-    padding: 5%;
     font-size: small;
+    min-width: fit-content;
+    height: inherit;
+    border-radius: 8px;
+    padding: 1.5ch;
 }
 
-.aside-card .description {
-    color: var(--textGray);
-    font-size: smaller;
-}
-
-main .title {
-    font-size: x-large;
-    background-color: var(--backgroundGray);
-    padding: 5px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--dividerGray);
-}
-
-.secondary-text {
-    color: var(--textGray);
-    font-weight: 200;
-    font-size: medium;
-}
-
-.div-card-tab {
+.area-header .card-azul {
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
-.card-tab {
-    background-color: var(--white);
+main .card-azul-container {
+    display: flex;
+    overflow: scroll;
+    font-size: x-small;
+    height: fit-content;
+}
+
+aside .card-azul-container {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+.card-azul-ti {
     color: var(--tableTitle);
     font-size: small;
-    font-weight: 600;
+    font-weight: bold;
+}
+
+.card-azul-de {
+    color: var(--textGray);
+    font-size: smaller;
+    font-weight: 400;
+}
+
+.area-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    border-radius: 8px;
-    padding: 10px 15px;
-    width: min-content;
-    height: 100%;
 }
 
 .tag-alerta{
@@ -193,64 +190,53 @@ main .title {
     padding: 1ch 0.5ch;
 }
 
-@media screen and (max-width: 999px){
-    body {
-        background-color: red;
-    }
-}
+/* media query */
 
-@media screen and (max-width: 555px){
-    
+/* tablet */
+@media screen and (max-width: 1000px) {
+
+    /* tags */
+
     body {
-        background-color: blue;
         display: flex;
         flex-direction: column;
-        gap: 1%;
-        height: 100vh;
-        width: 100vw;
-        overflow: scroll;
     }
 
     aside {
         width: 100%;
-        height: fit-content;
-        display: flex;
-        flex-direction: column;
+        height: max-content;
+        overflow-y: visible;
     }
 
     main {
-        width: 100vw;
-        height: 80%;
+        width: 100%;
+        height: fit-content;
+    }
+
+    /* TEMPORARIO*/
+    table {
+        display: none;
+    }
+
+    /* classes */
+
+    aside .search {
+        width: 100%;
+    }
+
+    .card-azul-container {
+        display: flex;
+        flex-direction: row;
         overflow: scroll;
-    }
-
-    main .title {
-        position: fixed;
-        background-color: var(--backgroundGray);
-        width: 100%;
-        padding: 5px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid var(--dividerGray);
-    }
-
-    th {
-        position: fixed;
-        width: 100%;
+        gap: 1%;
     }
 
 }
 
-/*
-TODO:
-- espacamento entre cards do aside
-- icones
-- icones nos inputs
-- icones nos botoes
-- juntar pesquisa e icone no main
-- espacamento entre areas do main
-- azul na aba selecionada
-- arredondar borda da tabela (se possivel)
-- mobile
-- fazer rascunho no codepen para passar body p flex
+/* telefone */
 
-*/
+@media screen and (max-width: 550px) {
+    
+    
+}
+
