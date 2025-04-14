@@ -53,6 +53,16 @@ aside {
     padding: 1ch;
 }
 
+button {
+    background-color: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--tableArea);
+}
+
 main {
     background-color: var(--backgroundGray);
     height: 100%;
@@ -113,6 +123,10 @@ td {
     min-width: fit-content;
 }
 
+.action-button {
+    border: none;
+}
+
 aside .search {
     width: 100%;
 }
@@ -145,12 +159,24 @@ aside .card-cinza {
 
 aside .icon {
     height: 2.5ch;
-    margin-bottom: 1ch;
+    background-color: var(--backgroundGray);
+    padding: 3px;
+    border-radius: 999px;
+}
+
+aside button .icon {
+    background-color: none;
+    padding: 0px;
+    border-radius: 0px;
 }
 
 main .icon {
     height: 2ch;
     margin-right: 0.5ch;
+}
+
+button img.icon {
+    margin: 0px;
 }
 
 .area-header .card-azul {
