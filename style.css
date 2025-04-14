@@ -1,6 +1,5 @@
 /*
 TO-DO geral:
-- espacamento entre cards favoritos
 - xingar a tabela. e depois resolver.
     - tamanhos nao-fixos
     - alguma outra propriedade misteriosa de tabelas
@@ -10,9 +9,8 @@ TO-DO geral:
 - revisar comparando com a imagem original
 
 TO-DO mobile:
-- espaco entre cards no aside
 - deixar card aba selecionado azul
-- xingar a tabela. e depois resolver.
+- a tal da tabela
 */
 
 
@@ -145,9 +143,23 @@ aside .card-cinza {
     padding: 1.5ch;
 }
 
+aside .icon {
+    height: 2.5ch;
+    margin-bottom: 1ch;
+}
+
+main .icon {
+    height: 2ch;
+    margin-right: 0.5ch;
+}
+
 .area-header .card-azul {
     display: flex;
     align-items: center;
+}
+
+.card-azul-container {
+    gap: 8px;
 }
 
 main .card-azul-container {
@@ -193,7 +205,7 @@ aside .card-azul-container {
 /* media query */
 
 /* tablet */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 800px) {
 
     /* tags */
 
@@ -205,7 +217,7 @@ aside .card-azul-container {
     aside {
         width: 100%;
         height: max-content;
-        overflow-y: visible;
+        overflow: visible;
     }
 
     main {
@@ -216,6 +228,8 @@ aside .card-azul-container {
     /* TEMPORARIO*/
     table {
         display: none;
+        overflow: scroll;
+        width: fit-content;
     }
 
     /* classes */
@@ -228,7 +242,6 @@ aside .card-azul-container {
         display: flex;
         flex-direction: row;
         overflow: scroll;
-        gap: 1%;
     }
 
 }
