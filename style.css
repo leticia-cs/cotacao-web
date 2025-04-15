@@ -54,13 +54,15 @@ aside {
 }
 
 button {
-    background-color: none;
+    background-color: transparent;
     border-radius: 5px;
     cursor: pointer;
+    border: none;
 }
 
 button:hover {
     background-color: var(--tableArea);
+    
 }
 
 main {
@@ -123,10 +125,6 @@ td {
     min-width: fit-content;
 }
 
-.action-button {
-    border: none;
-}
-
 aside .search {
     width: 100%;
 }
@@ -162,12 +160,11 @@ aside .icon {
     background-color: var(--backgroundGray);
     padding: 3px;
     border-radius: 999px;
+    border: none;
 }
 
 aside button .icon {
-    background-color: none;
-    padding: 0px;
-    border-radius: 0px;
+    background-color: transparent;
 }
 
 main .icon {
@@ -228,6 +225,17 @@ aside .card-azul-container {
     padding: 1ch 0.5ch;
 }
 
+.clickable:hover {
+    background-color: var(--tableDivider);
+    cursor: pointer;
+}
+
+/* IDs */
+
+#aba-aberta {
+    background-color: var(--tableArea);
+}
+
 /* media query */
 
 /* tablet */
@@ -250,13 +258,14 @@ aside .card-azul-container {
         width: 100%;
         height: fit-content;
     }
-
-    /* TEMPORARIO*/
+    
+    /* 
     table {
         display: none;
         overflow: scroll;
         width: fit-content;
-    }
+    } 
+    */
 
     /* classes */
 
