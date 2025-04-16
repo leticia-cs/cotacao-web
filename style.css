@@ -62,7 +62,6 @@ button {
 
 button:hover {
     background-color: var(--tableArea);
-    
 }
 
 main {
@@ -119,10 +118,30 @@ td {
 .search {
     border: 1px solid var(--tableTitle);
     border-radius: 5px;
-    color: var(--titleBlue);
     font-size: small;
     padding: 1ch;
     min-width: fit-content;
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 1ch;
+}
+
+.search input {
+    border: none;
+    background-color: transparent;
+    min-width: 20ch;
+    width: 100%;
+}
+
+.search button {
+    padding: 0.5ch;
+    display: flex;
+    align-items: center;
+}
+
+.search img {
+    height: 2ch;
 }
 
 aside .search {
@@ -213,6 +232,7 @@ aside .card-azul-container {
 .area-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .tag-alerta{
